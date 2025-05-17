@@ -57,7 +57,10 @@ if(MSVC)
 endif()
 
 apply_standard_settings(${PLUGIN_NAME})
+target_compile_options(${PLUGIN_NAME} PRIVATE "/await" "/std:c++latest")
+
 target_compile_features(${PLUGIN_NAME} PUBLIC cxx_std_20) # For std::format support
+
 
 set_target_properties(${PLUGIN_NAME} PROPERTIES CXX_VISIBILITY_PRESET hidden)
 
